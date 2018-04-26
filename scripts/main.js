@@ -43,12 +43,36 @@ createCardButton.addEventListener("click", function (){
 fragment.appendChild()
 fragment.appendChild()
 
+//create card component
+
+const cardFactory = (classList, textContent) => {
+    const theSection = document.createElement("buton")
+    inputField.classList = classList
+    inputField.placeholder = defaultPlaceholderText
+    return theSection
+
+}
+
+const createCardButton = buttonFactory("button--submit", "Create Card")
+
+createCardButton.addEventListener("click", function (){
+
+
+        const userEntry = cardTextInput.textContent
+
+
+})
+
+fragment.appendChild(cardTextInput)
+fragment.appendChild(createCardButton)
+
 
 
 /*attach event listener to button
     1. get value of input field
-    2. create card component with text inside 
-*/
+    */const userEntry = cardTextInput.value
+    //2. create card component with text inside 
+    cardFactory("card", userEntry)
 
 
 //create card component
