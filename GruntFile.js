@@ -1,3 +1,4 @@
+
 module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
@@ -19,12 +20,33 @@ module.exports = function (grunt) {
                 "./scripts/**/*.js",
                 "!node_modules/**/*.js"
             ]
+        },
+        browserify: {
+            dist: {
+                files: {
+                    "../dist/bundle.js": ["scripts/**/*.js"]
+                }
+            }
         }
     });
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-eslint");
-    grunt.loadNpmTasks("grunt-browserify")
+    grunt.loadNpmTasks("grunt-browserify");
+
     // Default task(s).
-    grunt.registerTask("default", ["eslint", "watch"]);
+    grunt.registerTask("default"["eslint","browserify", "watch"]);
 };
+/*© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
+Press h to open a hovercard with more details.*/
